@@ -14,8 +14,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH:/opt/homebrew/bin
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
 
-# Alias definitions
+# Alias and function definitions
 source ~/.zsh_aliases
+source ~/.zsh_functions
 
 # Allow history search via up/down keys https://formulae.brew.sh/formula/zsh-history-substring-search
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
