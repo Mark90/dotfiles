@@ -2,3 +2,6 @@
 *.LSOverride
 Thumbs.db
 .bundle
+.vscode
+.vagrant
+.idea
