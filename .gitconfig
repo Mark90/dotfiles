@@ -1,6 +1,7 @@
 [user]
 	name = Mark90
 	email = mark_moes@live.nl
+  signingkey = 1334E4AE0130907A
 [core]
   editor = vi
   excludesfile = ~/.gitignore
