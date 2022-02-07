@@ -1,2 +1,1 @@
-# Pyenv
-eval "$(pyenv init --path)"
+# Placeholder

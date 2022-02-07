@@ -17,7 +17,7 @@ filetype plugin on      " enable filetype-specific plugins
 " colorscheme cobalt      " requires cobalt.vim to be in ~/.vim/colors
 
 " column-width visual indication
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(120,9999),",")
 highlight ColorColumn ctermbg=235 guibg=#001D2F
 
 " tabs and indenting

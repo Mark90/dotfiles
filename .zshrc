@@ -61,7 +61,9 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 ## Pyenv
 if [[ -d "$HOME/.pyenv" ]]; then
-  # initialize pyenv
+  # set up shims path
+  eval "$(pyenv init --path)"
+  # initialize pyenv autocompletions
   eval "$(pyenv init -)"
   # initialize pyenv virtualenv
   eval "$(pyenv virtualenv-init -)"
