@@ -1,1 +1,11 @@
 # Placeholder
+
+
+function charm() {
+  app=$(find $(brew --prefix)/Caskroom/pycharm -iname pycharm.app -exec stat -lt '%Y%m%d%H%M%S' {} \; | cut -d ' ' -f6- | sort -n | tail -1 | cut -d ' ' -f2)
+  if [ -z "$app" ]; then
+    echo "Cannot find pycharm.app"
+    exit 1
+  fi
+  open -na "$app" --args "$@"
+}
