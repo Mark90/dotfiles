@@ -4,6 +4,10 @@ alias mv='mv -i'
 alias cp='cp -i'
 
 
+# Helpers
+alias charm='open -na "/Applications/PyCharm.app" --args "$@"'
+
+
 # Git aliases.
 #alias gs='git status'
 #alias gc='git commit'
