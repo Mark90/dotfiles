@@ -9,7 +9,7 @@ echo -e "Hello from $whatami (sourced by $0)"
 unsetopt nomatch
 
 # Custom $PATH with extra locations.
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH:/opt/homebrew/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/.local/bin:$PATH:/opt/homebrew/bin
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
