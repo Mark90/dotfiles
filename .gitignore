@@ -5,3 +5,8 @@ Thumbs.db
 .vscode
 .vagrant
 .idea
+mydata
+myscripts
+.env_*
+.venv*
+venv*
