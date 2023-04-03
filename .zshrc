@@ -78,3 +78,5 @@ brew_prefix=$(brew --prefix)
 
 # Tell gpg-agent to manage this shell.
 export GPG_TTY=$(tty)
+
+source /Users/mark/.docker/init-zsh.sh || true # Added by Docker Desktop
