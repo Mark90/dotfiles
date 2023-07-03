@@ -10,3 +10,4 @@ myscripts
 .env_*
 .venv*
 venv*
+.run
