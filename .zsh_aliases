@@ -16,3 +16,11 @@ alias ok=okteto
 #alias gp='git pull --rebase'
 #alias gcam='git commit -am'
 #alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+
+# Docker compose aliases
+alias dcu='docker compose up'
+alias dcd='docker compose down'
+alias dcb='docker compose build'
+alias dcp='docker compose ps'
+alias dcr='docker compose run'
+alias dce='docker compose exec'
