@@ -40,3 +40,5 @@
 	program = /opt/homebrew/bin/gpg
 [includeIf "gitdir:~/dev/surf/gitlab/"]
   path = ~/dev/surf/gitlab/.gitconfig
+[submodule]
+	recurse = true
