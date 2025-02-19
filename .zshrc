@@ -3,7 +3,8 @@
 ###########
 
 whatami=${(%):-%N}
-echo -e "Hello from $whatami (sourced by $0)"
+ts "$whatami starting (sourced by $0)"
+
 
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
@@ -23,6 +24,8 @@ source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
+ts Setup completions
+
 # Completions.
 autoload -Uz compinit && compinit
 # Case insensitive.
@@ -30,6 +33,8 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 
 # Add zsh-completions to fpath
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+ts Setup highlighting
 
 # Enable https://formulae.brew.sh/formula/zsh-fast-syntax-highlighting
 source $(brew --prefix)/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -59,6 +64,8 @@ setopt HIST_SAVE_NO_DUPS      # Dont write duplicate entries in the history file
 ### Oh My Zsh ###
 #################
 
+ts Setup oh-my-zsh plugins
+
 # Enable plugins.
 plugins=(git docker ssh-agent kubectl brew history-substring-search)
 
@@ -68,7 +75,9 @@ export ZSH=/Users/mark/.oh-my-zsh
 # Choose a theme.
 ZSH_THEME=jnrowe
 
+ts Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+ts Load oh-my-zsh complete
 
 ############
 ### Apps ###
@@ -76,6 +85,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Tell homebrew to not autoupdate every single time I run it (just once a week).
 export HOMEBREW_AUTO_UPDATE_SECS=604800
+
+ts Setup pyenv
 
 ## Pyenv
 if [[ -d "$HOME/.pyenv" ]]; then
@@ -87,6 +98,8 @@ if [[ -d "$HOME/.pyenv" ]]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+ts Setup nvm
+
 ## Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -d $NVM_DIR ] || mkdir $NVM_DIR
@@ -97,7 +110,14 @@ brew_prefix=$(brew --prefix)
 # Tell gpg-agent to manage this shell.
 export GPG_TTY=$(tty)
 
+ts Load .docker/init-zsh.sh
+
 source /Users/mark/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+ts Load fuzzy finder
 
 # Enable fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+whatami=${(%):-%N}
+ts "$whatami finished (sourced by $0)"
