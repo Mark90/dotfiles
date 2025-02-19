@@ -89,13 +89,27 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 ts Setup pyenv
 
 ## Pyenv
-if [[ -d "$HOME/.pyenv" ]]; then
-  # set up shims path
-  eval "$(pyenv init --path)"
-  # initialize pyenv autocompletions
-  eval "$(pyenv init -)"
-  # initialize pyenv virtualenv
-  eval "$(pyenv virtualenv-init -)"
+PYENV_ROOT="${HOME}/.pyenv"
+if [[ -d "$PYENV_ROOT" ]]; then
+  pyenv () {
+    echo "Lazy loading pyenv..."
+    # set up shims path
+    # Faster alternative to `eval "$(pyenv init --path)`
+    if ! (($path[(Ie)${PYENV_ROOT}/bin])); then
+      path[1,0]="${PYENV_ROOT}/bin"
+    fi
+    unfunction pyenv
+
+    # initialize pyenv autocompletions
+    eval "$(pyenv init -)"
+
+    # initialize pyenv virtualenv
+    eval "$(pyenv virtualenv-init -)"
+    echo "Lazy loading pyenv complete"
+
+    # Run original command
+    pyenv "$@"
+  }
 fi
 
 ts Setup nvm
@@ -104,8 +118,14 @@ ts Setup nvm
 export NVM_DIR="$HOME/.nvm"
 [ -d $NVM_DIR ] || mkdir $NVM_DIR
 brew_prefix=$(brew --prefix)
-[ -s "${brew_prefix}/opt/nvm/nvm.sh" ] && \. "${brew_prefix}/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "${brew_prefix}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "${brew_prefix}/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+nvm () {
+  echo "Lazy loading nvm..."
+  unfunction nvm
+  [ -s "${brew_prefix}/opt/nvm/nvm.sh" ] && \. "${brew_prefix}/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "${brew_prefix}/opt/nvm/etc/bash_completion.d/nvm" ] && \. "${brew_prefix}/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  # Run original command
+  nvm "$@"
+}
 
 # Tell gpg-agent to manage this shell.
 export GPG_TTY=$(tty)
