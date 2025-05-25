@@ -74,6 +74,9 @@ export ZSH=/Users/mark/.oh-my-zsh
 
 # Choose a theme.
 ZSH_THEME=jnrowe
+# 2025-05-12
+#ZSH_THEME=sobole
+#SOBOLE_THEME_MODE=dark
 
 ts Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh

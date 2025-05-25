@@ -42,5 +42,3 @@
   path = ~/dev/surf/gitlab/.gitconfig
 [includeIf "gitdir:~/dev/surf/2gitlab/"]
   path = ~/dev/surf/gitlab/.gitconfig
-[submodule]
-	recurse = true

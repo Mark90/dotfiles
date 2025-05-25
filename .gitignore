@@ -11,3 +11,4 @@ myscripts
 .venv*
 venv*
 .run
+.codspeed
