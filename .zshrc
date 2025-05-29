@@ -133,10 +133,6 @@ nvm () {
 # Tell gpg-agent to manage this shell.
 export GPG_TTY=$(tty)
 
-ts Load .docker/init-zsh.sh
-
-source "${HOME}/.docker/init-zsh.sh" || true # Added by Docker Desktop
-
 ts Load fuzzy finder
 
 # Enable fuzzy finder
