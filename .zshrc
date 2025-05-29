@@ -70,7 +70,7 @@ ts Setup oh-my-zsh plugins
 plugins=(git docker ssh-agent kubectl brew history-substring-search)
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/mark/.oh-my-zsh
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Choose a theme.
 ZSH_THEME=jnrowe
@@ -135,7 +135,7 @@ export GPG_TTY=$(tty)
 
 ts Load .docker/init-zsh.sh
 
-source /Users/mark/.docker/init-zsh.sh || true # Added by Docker Desktop
+source "${HOME}/.docker/init-zsh.sh" || true # Added by Docker Desktop
 
 ts Load fuzzy finder
 
