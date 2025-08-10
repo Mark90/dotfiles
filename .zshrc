@@ -140,3 +140,5 @@ ts Load fuzzy finder
 
 whatami=${(%):-%N}
 ts "$whatami finished (sourced by $0)"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
