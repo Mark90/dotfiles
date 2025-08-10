@@ -89,6 +89,12 @@ ts Load oh-my-zsh complete
 # Tell homebrew to not autoupdate every single time I run it (just once a week).
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 
+# Lately some brew installed libraries are not found by python dependencies (zbar, cairosvg)
+# Not sure what caused it but adding this fallback path fixes it, however it's apparently not recommended:
+# https://stackoverflow.com/a/3172515
+# Try it for now, revert in case of issues
+export DYLD_FALLBACK_LIBRARY_PATH=$(brew --prefix)/lib
+
 ts Setup pyenv
 
 ## Pyenv
