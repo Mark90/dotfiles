@@ -43,6 +43,8 @@ ts Setup highlighting
 
 # Enable https://formulae.brew.sh/formula/zsh-fast-syntax-highlighting
 source $(brew --prefix)/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# Fix 1-30 second freezes for the 'man' command... https://github.com/zdharma-continuum/fast-syntax-highlighting/issues/27
+export FAST_HIGHLIGHT[chroma-man]=
 
 # Enable https://formulae.brew.sh/formula/zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
