@@ -24,14 +24,19 @@ source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
-ts Setup completions
-
 # Completions.
-autoload -Uz compinit && compinit
+ts Autoload compinit
+autoload -Uz compinit
+
+ts Run compinit
+# This is slow. https://gist.github.com/ctechols/ca1035271ad134841284
+compinit
+
+ts Make completions case insensitive
 # Case insensitive.
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
-# Add zsh-completions to fpath
+ts Add zsh-completions to fpath
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 ts Setup highlighting
