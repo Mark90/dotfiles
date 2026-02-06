@@ -67,7 +67,14 @@ setopt HIST_SAVE_NO_DUPS      # Dont write duplicate entries in the history file
 ts Setup oh-my-zsh plugins
 
 # Enable plugins.
-plugins=(git docker ssh-agent kubectl brew history-substring-search)
+plugins=(
+  git
+  docker
+  ssh-agent
+  kubectl
+  brew
+  history-substring-search
+)
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
