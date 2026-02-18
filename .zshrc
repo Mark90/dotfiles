@@ -28,9 +28,12 @@ bindkey "^[[B" history-substring-search-down
 ts Autoload compinit
 autoload -Uz compinit
 
-ts Run compinit
-# This is slow. https://gist.github.com/ctechols/ca1035271ad134841284
-compinit
+# ts Run compinit
+# # This is slow. https://gist.github.com/ctechols/ca1035271ad134841284
+# compinit
+
+ts Run compinit_daily
+compinit_daily
 
 ts Make completions case insensitive
 # Case insensitive.
