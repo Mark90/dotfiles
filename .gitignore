@@ -12,3 +12,4 @@ myscripts
 venv*
 .run
 .codspeed
+settings.local.json
