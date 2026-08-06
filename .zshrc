@@ -165,3 +165,7 @@ whatami=${(%):-%N}
 ts "$whatami finished (sourced by $0)"
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+# Load direnv
+eval "$(direnv hook zsh)"
+
