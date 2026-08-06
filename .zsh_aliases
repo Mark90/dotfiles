@@ -30,11 +30,5 @@ alias dcp='docker compose ps'
 alias dcr='docker compose run'
 alias dce='docker compose exec'
 
-# Python
-alias pi='pip install'
-alias piu='pip install -U'
-alias pu='pip uninstall'
-
-
 whatami=${(%):-%N}
 ts "$whatami finished (sourced by $0)"
